@@ -15,14 +15,13 @@ def merge_sort(arr):
         k = 0  # merged array index
 
         while i < len(left_arr) and j < len(right_arr):
-           if left_arr[i] < right_arr[j]:
+            if left_arr[i] < right_arr[j]:
                 arr[k] = left_arr[i]
                 i += 1
-                k += 1
             else:
                 arr[k] = right_arr[j]
                 j += 1
-                k += 1
+            k += 1
 
         while i < len(left_arr):
             arr[k] = left_arr[i]
@@ -34,7 +33,13 @@ def merge_sort(arr):
             j += 1
             k += 1
 
+
 arr_test = [2, 3, 5, 1, 7, 4, 4, 4, 2, 6, 0]
+
+print(f"input: {arr_test} \n")
+left_arr = arr_test[:len(arr_test)//2]
+right_arr = right_arr = arr_test[len(arr_test)//2:]
+print(left_arr, right_arr)
 merge_sort(arr_test)
 
-print(arr_test)
+print("\n", arr_test)
